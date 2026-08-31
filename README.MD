@@ -1,96 +1,83 @@
 # 💈 Barber Grid
 
-Sistema web para gestão de estabelecimentos de estética masculina, desenvolvido com o objetivo de auxiliar no gerenciamento de clientes, serviços e agendamentos.
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Django](https://img.shields.io/badge/Django-5.0-092E20?style=for-the-badge&logo=django&logoColor=white)](https://www.djangoproject.com/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+[![License: MIT](https://img.shields.io/badge/License-Academic-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-O Barber Grid busca facilitar a organização de uma barbearia, permitindo o controle de informações importantes do estabelecimento e reduzindo conflitos relacionados aos horários de atendimento.
+Sistema web para gestão de estabelecimentos de estética masculina, desenvolvido com o objetivo de auxiliar no gerenciamento de clientes, serviços e agendamentos. O **Barber Grid** facilita a organização da barbearia, permitindo o controle de informações vitais e a redução de conflitos de horários.
 
 ---
 
 ## 📋 Sobre o projeto
 
-O **Barber Grid** é um sistema de gestão para barbearias desenvolvido como projeto acadêmico.
+O **Barber Grid** é um sistema de gestão acadêmico projetado para otimizar rotinas de barbearias. A arquitetura da aplicação é baseada no framework **Django**, utilizando o padrão **MVT (Model-View-Template)**.
 
-A proposta do sistema é oferecer recursos para auxiliar no gerenciamento de uma barbearia, principalmente em atividades relacionadas ao cadastro de clientes, serviços e agendamentos.
-
-O sistema está sendo desenvolvido utilizando o framework **Django**, seguindo o padrão arquitetural **MVT (Model-View-Template)**.
+| Atributo | Detalhes do Projeto |
+| :--- | :--- |
+| **Framework** | Django (Python) |
+| **Arquitetura** | MVT (Model-View-Template) |
+| **Banco de Dados** | SQLite (Desenvolvimento) |
+| **Front-end** | HTML5, CSS3, JavaScript, Bootstrap 5 |
+| **Controle de Versão** | Git & GitHub |
 
 ---
 
-## 🎯 Problema
+## 🎯 Problema & Solução
 
-O gerenciamento manual de agendamentos pode gerar problemas como:
-
-- conflitos entre horários;
-- dificuldade no controle dos clientes;
-- dificuldade na organização dos serviços oferecidos;
-- falta de centralização das informações;
-- dificuldade no acompanhamento dos agendamentos.
-
-O Barber Grid busca contribuir para a organização dessas informações em um sistema web.
+| Desafios do Gerenciamento Manual | Soluções Propostas pelo Barber Grid |
+| :--- | :--- |
+| Conflitos frequentes entre horários | Sistema automatizado de checagem de disponibilidade |
+| Dificuldade no controle de clientes | Centralização de cadastros e histórico |
+| Desorganização dos serviços ofertados | Catálogo estruturado de procedimentos e durações |
+| Falta de centralização de dados | Plataforma web unificada para equipe e gestores |
 
 ---
 
 ## 🚀 Funcionalidades
 
-Entre as funcionalidades previstas para o sistema estão:
-
-- [x] Cadastro de clientes;
-- [x] Cadastro de serviços;
-- [x] Cadastro de barbeiros;
-- [x] Sistema de agendamentos;
-- [x] Controle do status dos agendamentos;
-- [ ] Autenticação de usuários;
-- [ ] Área de gerenciamento da barbearia;
-- [ ] Prevenção de conflitos de horários;
-- [ ] Integração e melhorias futuras.
-
-> As funcionalidades poderão ser alteradas ou expandidas durante o desenvolvimento do projeto.
+| Funcionalidade | Status |
+| :--- | :---: |
+| Cadastro de clientes | Concluído |
+| Cadastro de serviços | Concluído |
+| Cadastro de barbeiros | Concluído |
+| Sistema de agendamentos | Concluído |
+| Controle de status de agendamentos | Concluído |
+| Autenticação de usuários | Em desenvolvimento |
+| Área restrita de gerenciamento | Em desenvolvimento |
+| Prevenção de conflitos de horários | Em desenvolvimento |
 
 ---
 
-## 👥 Usuários do sistema
+## 👥 Perfis de Usuários
 
-O sistema possui como principais usuários:
-
-### Cliente
-
-O cliente poderá utilizar o sistema para visualizar informações e realizar agendamentos de serviços.
-
-### Barbeiro / Administrador
-
-O responsável pela barbearia poderá gerenciar informações relacionadas aos clientes, serviços e agendamentos.
+* **Cliente:** Visualiza serviços disponíveis e realiza agendamentos online.
+* **Barbeiro / Administrador:** Gerencia o fluxo de atendimento, clientes, serviços e horários da barbearia.
 
 ---
 
-## 🛠️ Tecnologias utilizadas
+## 🛠️ Tecnologias Utilizadas
 
-O Barber Grid utiliza as seguintes tecnologias:
-
-- Python
-- Django
-- HTML
-- CSS
-- Bootstrap
-- JavaScript
-- SQLite
-- Git
-- GitHub
+* **Linguagem Backend:** Python
+* **Framework Web:** Django
+* **Linguagem Frontend:** JavaScript
+* **Estilização:** CSS, Bootstrap
+* **Banco de Dados:** SQLite
+* **Ferramentas:** Git, GitHub, Figma
 
 ---
 
-## 🏗️ Arquitetura
+## 🏗️ Arquitetura (MVT)
 
-O sistema é desenvolvido utilizando o padrão **MVT (Model-View-Template)**, utilizado pelo Django.
-
-A organização principal é dividida em:
-
-- **Model:** responsável pela estrutura e manipulação dos dados;
-- **View:** responsável pela lógica da aplicação;
-- **Template:** responsável pela apresentação das páginas ao usuário.
+* **Model:** Responsável pela estrutura de dados e regras de negócio com o ORM do Django.
+* **View:** Processa as requisições HTTP, executa a lógica e interage com os Models.
+* **Template:** Renderiza a interface visual para o usuário utilizando HTML, Bootstrap e scripts em JavaScript.
 
 ---
 
-## 📁 Estrutura do projeto
+## 📁 Estrutura do Projeto
 
 ```text
 barber-grid/
@@ -101,313 +88,77 @@ barber-grid/
 ├── docs/
 │   ├── README.md
 │   ├── diagramas/
-│   │   └── README.md
-│   │
 │   └── prototipos/
-│       └── README.md
 │
-├── config/
-│   ├── __init__.py
-│   ├── settings.py
-│   ├── urls.py
-│   └── ...
-│
-├── barber/
-│   └── ...
-│
-├── static/
-│
-├── templates/
-│
-├── .env.example
-├── .gitignore
-├── manage.py
-├── README.md
-└── requirements.txt
-````
+├── config/             # Configurações do projeto Django (settings, urls, etc.)
+├── barber_grid/        # App principal (models, views, forms, migrations)
+├── static/             # Arquivos estáticos (CSS, JS, imagens)
+├── templates/          # Arquivos HTML globais e específicos
+├── .env.example        # Exemplo de variáveis de ambiente
+├── .gitignore          # Arquivos ignorados pelo Git
+├── manage.py           # Utilitário de linha de comando do Django
+├── README.md           # Documentação principal
+└── requirements.txt    # Dependências do projeto
 
-A estrutura do repositório segue a organização recomendada para os projetos da disciplina, incluindo diretórios para documentação, protótipos, diagramas e configurações do projeto Django. ([Fnanda IFRN][1])
-
----
-
-## ⚙️ Como executar o projeto
+## ⚙️ Como Executar o Projeto
 
 ### 1. Clone o repositório
-
 ```bash
-git clone https://github.com/alvarogit-ops/barber-management-system-grid.git
-```
-
-Entre na pasta do projeto:
-
-```bash
+git clone [https://github.com/alvarogit-ops/barber-management-system-grid.git](https://github.com/alvarogit-ops/barber-management-system-grid.git)
 cd barber-grid
-```
-
----
-
-### 2. Crie um ambiente virtual
-
-No Windows:
-
-```bash
-python -m venv venv
-```
-
-Ative o ambiente virtual:
-
-```bash
+### 2. Crie e ative o ambiente virtualWindows:Bashpython -m venv venv
 venv\Scripts\activate
-```
-
-No Linux ou macOS:
-
-```bash
-python3 -m venv venv
+Linux / macOS:Bashpython3 -m venv venv
 source venv/bin/activate
-```
-
----
-
-### 3. Instale as dependências
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-### 4. Configure as variáveis de ambiente
-
-Crie um arquivo chamado `.env` com base no arquivo `.env.example`.
-
-Exemplo:
-
-```text
-SECRET_KEY=sua_chave_secreta_aqui
+### 3. Instale as dependênciasBashpip install -r requirements.txt
+### 4. Configure as variáveis de ambienteCrie um arquivo .env na raiz com base no .env.example:PlaintextSECRET_KEY=sua_chave_secreta_aqui
 DEBUG=True
-```
+### 5. Execute as migrações e inicie o servidor
+```Bash
 
-> O arquivo `.env` não deve ser enviado para o repositório, pois pode conter informações sensíveis.
-
----
-
-### 5. Execute as migrações
-
-```bash
 python manage.py makemigrations
-```
-
-```bash
 python manage.py migrate
-```
-
----
-
-### 6. Inicie o servidor
-
-```bash
 python manage.py runserver
-```
 
-Após iniciar o servidor, acesse:
-
-```text
-http://127.0.0.1:8000/
-```
+Acesse o sistema em: `http://127.0.0.1:8000/`
 
 ---
 
-## 🗃️ Modelos principais
+## 🗃️ Modelos Principais
 
-O sistema possui modelos relacionados ao gerenciamento de uma barbearia.
-
-### Cliente
-
-Representa os clientes cadastrados no sistema.
-
-### Barbeiro
-
-Representa os profissionais responsáveis pelos atendimentos.
-
-### Serviço
-
-Representa os serviços oferecidos pela barbearia.
-
-Exemplos:
-
-* Corte de cabelo;
-* Barba;
-* Corte e barba.
-
-### Agendamento
-
-Representa os horários agendados pelos clientes.
-
-Um agendamento pode possuir informações como:
-
-* cliente;
-* serviço;
-* data;
-* horário;
-* status.
+| Modelo | Descrição |
+| :--- | :--- |
+| **Cliente** | Armazena dados cadastrais e de contato dos clientes. |
+| **Barbeiro** | Cadastra os profissionais prestadores de serviço. |
+| **Serviço** | Define os procedimentos ofertados (ex: Corte, Barba) e preços. |
+| **Agendamento** | Relaciona cliente, barbeiro, serviço, data, hora e status. |
 
 ---
 
-## 📊 Status dos agendamentos
+## 📚 Documentação & Links
 
-Os agendamentos podem possuir diferentes estados, como:
-
-* Pendente;
-* Confirmado.
-
-Outros estados poderão ser adicionados conforme a evolução do sistema.
-
----
-
-## 📚 Documentação
-
-A documentação complementar do projeto está organizada na pasta `docs/`.
-
-### Diagramas
-
-Os diagramas do sistema podem ser encontrados em:
-
-```text
-docs/diagramas/
-```
-
-### Protótipos
-
-Os protótipos e informações relacionadas às telas do sistema podem ser encontrados em:
-
-```text
-docs/prototipos/
-```
-
-### Protótipo no Figma
-
-🔗 **Link do protótipo:**
-
-https://www.figma.com/design/7VZa5L9xZABGCEB4kYEZ4f/Barber-Grid?node-id=1-1049&p=f&t=BhW3g7l4vlAelgQP-0
-
----
-
-## 🔀 Organização do desenvolvimento
-
-O desenvolvimento do projeto é acompanhado utilizando recursos do GitHub.
-
-As atividades são organizadas por meio de:
-
-* Issues;
-* Labels;
-* Branches;
-* Pull Requests;
-* GitHub Project.
-
-As principais categorias de trabalho utilizadas são:
-
-* `enhancement` — novas funcionalidades ou melhorias;
-* `bug` — correção de erros;
-* `task` — tarefas técnicas.
-
-As áreas também podem ser identificadas por Labels como:
-
-* `frontend`;
-* `backend`;
-* `database`;
-* `documentation`;
-* `testing`.
-
-A organização segue o padrão definido para os projetos da disciplina. ([Fnanda IFRN][1])
-
----
-
-## 🌿 Convenção de branches
-
-As branches seguem o padrão:
-
-```text
-prefixo/numero-da-issue-descricao
-```
-
-Exemplos:
-
-```text
-feature/10-criar-agendamento
-```
-
-```text
-fix/15-corrigir-conflito-horario
-```
-
-```text
-task/20-organizar-documentacao
-```
-
----
-
-## 🧪 Testes
-
-Os testes e validações do sistema serão realizados durante o desenvolvimento das funcionalidades.
-
-Entre os aspectos que podem ser testados estão:
-
-* criação de agendamentos;
-* validação de horários;
-* cadastro de clientes;
-* cadastro de serviços;
-* funcionamento das páginas;
-* comportamento do sistema em diferentes situações.
-
----
-
-## 🔮 Melhorias futuras
-
-Possíveis melhorias para futuras versões do Barber Grid incluem:
-
-* autenticação completa de usuários;
-* recuperação de senha;
-* controle de permissões;
-* painel administrativo personalizado;
-* notificações de agendamentos;
-* integração com serviços de mensagens;
-* relatórios;
-* dashboard com informações da barbearia;
-* sistema de fidelidade;
-* melhorias na responsividade;
-* novos testes automatizados.
+* 🔗 **[Protótipo no Figma](https://www.figma.com/design/7VZa5L9xZABGCEB4kYEZ4f/Barber-Grid?node-id=1-1049&p=f&t=BhW3g7l4vlAelgQP-0)**
+* Documentação complementar e diagramas disponíveis na pasta `docs/`.
 
 ---
 
 ## 👨‍💻 Equipe
 
-| Nome                   | Função          |
-| ---------------------- | --------------- |
-| **Álvaro Yuri**        | Project Owner, Scrum Master, Desenvolvedor |
-
-
-> Atualize esta tabela com os integrantes e suas respectivas responsabilidades no projeto.
+| Nome | Função |
+| :--- | :--- |
+| **Álvaro Yuri** | Project Owner, Scrum Master, Desenvolvedor |
 
 ---
 
-## 📌 Informações acadêmicas
+## 📌 Informações Acadêmicas
 
-**Projeto:** Barber Grid
-**Área:** Desenvolvimento de Sistemas
-**Tecnologia principal:** Django
-
-**Instituição:** IFRN Campus São Paulo do Potengi
-**Disciplina:** Projeto de Desenvolvimento de Sistemas para Internet
-**Professor(a):** Fernanda Lígia
-**Orientador:** Diego Cirilo
+* **Instituição:** IFRN Campus São Paulo do Potengi
+* **Disciplina:** Projeto de Desenvolvimento de Sistemas para Internet
+* **Professora:** Fernanda Lígia
+* **Orientador:** Diego Cirilo
 
 ---
 
 ## 📄 Licença
 
-Este projeto foi desenvolvido para fins acadêmicos.
-
-```
-
-
+Desenvolvido para fins acadêmicos sob os termos da licença padrão de projetos educacionais.
