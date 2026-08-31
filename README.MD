@@ -121,7 +121,7 @@ python manage.py migrate
 python manage.py runserver
 
 Acesse o sistema em: `http://127.0.0.1:8000/`
-
+```
 ---
 
 ## 🗃️ Modelos Principais
