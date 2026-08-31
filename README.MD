@@ -102,26 +102,64 @@ barber-grid/
 ```
 ## ⚙️ Como Executar o Projeto
 
-### 1. Clone o repositório
-```bash
-git clone [https://github.com/alvarogit-ops/barber-management-system-grid.git](https://github.com/alvarogit-ops/barber-management-system-grid.git)
-cd barber-grid
-### 2. Crie e ative o ambiente virtualWindows:Bashpython -m venv venv
-venv\Scripts\activate
-Linux / macOS:Bashpython3 -m venv venv
-source venv/bin/activate
-### 3. Instale as dependênciasBashpip install -r requirements.txt
-### 4. Configure as variáveis de ambienteCrie um arquivo .env na raiz com base no .env.example:PlaintextSECRET_KEY=sua_chave_secreta_aqui
-DEBUG=True
-### 5. Execute as migrações e inicie o servidor
-```Bash
 
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/alvarogit-ops/barber-management-system-grid.git
+cd barber-grid
+```
+
+### 2. Crie e ative o ambiente virtual
+
+**No Windows:**
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+**No Linux ou macOS:**
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Instale as dependências
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure as variáveis de ambiente
+
+Crie um arquivo `.env` na raiz do projeto com base no arquivo `.env.example`:
+
+```plaintext
+SECRET_KEY=sua_chave_secreta_aqui
+DEBUG=True
+```
+
+### 5. Execute as migrações e inicie o servidor
+
+Execute as migrações do banco de dados:
+
+```bash
 python manage.py makemigrations
 python manage.py migrate
-python manage.py runserver
-
-Acesse o sistema em: `http://127.0.0.1:8000/`
 ```
+
+Inicie o servidor de desenvolvimento:
+
+```bash
+python manage.py runserver
+```
+
+Acesse o sistema em:
+
+`http://127.0.0.1:8000/`
+
 ---
 
 ## 🗃️ Modelos Principais
