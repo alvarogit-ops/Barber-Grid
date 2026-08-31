@@ -400,6 +400,7 @@ Possíveis melhorias para futuras versões do Barber Grid incluem:
 **Instituição:** IFRN Campus São Paulo do Potengi
 **Disciplina:** Projeto de Desenvolvimento de Sistemas para Internet
 **Professor(a):** Fernanda Lígia
+**Orientador:** Diego Cirilo
 
 ---
 
