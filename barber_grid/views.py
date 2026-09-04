@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.http import JsonResponse
+from django.template.loader import render_to_string
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login, logout, update_session_auth_hash
@@ -89,17 +91,21 @@ def logoutForm(request):
     return redirect('login') #não deve ser um html
 
 @login_required
+@login_required
 def index(request):
-    #aqui somente usuários comuns acessam a página home
+    print("MÉTODO:", request.method)
+    print("AJAX:", request.headers.get('X-Requested-With'))
+    print("USUÁRIO:", request.user)
+    # aqui somente usuários comuns acessam a página home
 
     if request.user.is_staff:
-        return redirect ('painel_admin')
+        return redirect('painel_admin')
 
     cliente = Cliente.para_usuario(request.user)
-    agendamentos = Agendamento.objects.filter(usuario=cliente).prefetch_related('servico')
 
     if request.method == 'POST':
         form = AgendamentoForm(request.POST)
+
         if form.is_valid():
             try:
                 with transaction.atomic():
@@ -107,13 +113,77 @@ def index(request):
                     agendamento.usuario = cliente
                     agendamento.save()
                     form.save_m2m()
+
             except IntegrityError:
-                form.add_error(None, 'Este horário já está ocupado. Escolha outro.')
+                form.add_error(
+                    None,
+                    'Este horário já está ocupado. Escolha outro.'
+                )
+
+                if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+                    return JsonResponse(
+                        {
+                            'sucesso': False,
+                            'form_html': render_to_string(
+                                'barber_grid/partials/form_agendamento.html',
+                                {'form': form},
+                                request=request,
+                            ),
+                        },
+                        status=400,
+                    )
+
             else:
-                messages.success(request, 'Agendamento realizado com sucesso.')
+                agendamentos = (
+                    Agendamento.objects
+                    .filter(usuario=cliente)
+                    .prefetch_related('servico')
+                )
+
+                if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+                    lista_html = render_to_string(
+                        'barber_grid/partials/lista_agendamentos.html',
+                        {'agendamentos': agendamentos},
+                        request=request,
+                    )
+
+                    return JsonResponse({
+                        'sucesso': True,
+                        'mensagem': 'Agendamento realizado com sucesso.',
+                        'lista_html': lista_html,
+                    })
+
+                messages.success(
+                    request,
+                    'Agendamento realizado com sucesso.'
+                )
+
                 return redirect('index')
+
+        else:
+            print("ERROS DO FORMULÁRIO:", form.errors)
+            
+            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+                return JsonResponse(
+                    {
+                        'sucesso': False,
+                        'form_html': render_to_string(
+                            'barber_grid/partials/form_agendamento.html',
+                            {'form': form},
+                            request=request,
+                        ),
+                    },
+                    status=400,
+                )
+
     else:
         form = AgendamentoForm()
+
+    agendamentos = (
+        Agendamento.objects
+        .filter(usuario=cliente)
+        .prefetch_related('servico')
+    )
 
     return render(
         request,
