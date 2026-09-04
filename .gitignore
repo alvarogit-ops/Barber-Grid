@@ -4,8 +4,12 @@ venv/
 env/
 *.pyc/
 __pycache__/
+
+#sqlite
+
 db.sqlite3/
 db.sqlite3
+*.db
 
 # Logs
 logs
