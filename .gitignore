@@ -6,7 +6,6 @@ env/
 __pycache__/
 
 #sqlite
-teste
 db.sqlite3/
 db.sqlite3
 *.db
