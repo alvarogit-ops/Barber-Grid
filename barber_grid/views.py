@@ -9,6 +9,10 @@ from django.db import IntegrityError, transaction
 from django.views.decorators.http import require_POST
 from .forms import AgendamentoForm, ClienteForm, ServicoForm
 from .models import Agendamento, Cliente, Servico
+
+def setup(request):
+    return render(request, 'barber_grid/setup.html')
+
 def login(request):
     # Verifico se um usuário existe e se a senha está correta
 
@@ -229,4 +233,3 @@ def atualizar_status_agendamento(request, agendamento_id):
     agendamento.save(update_fields=['status'])
     messages.success(request, f'Agendamento marcado como {agendamento.get_status_display().lower()}.')
     return redirect('painel_admin')
-
