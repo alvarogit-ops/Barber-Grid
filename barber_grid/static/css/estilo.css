@@ -26,4 +26,12 @@ img{
 .imagens_invisiveis{
     display: none;
 }
-    
+
+
+.navbar-brand{
+    font-size: 20px;
+}
+
+.servico_img{
+    min-width: 100px;
+}
