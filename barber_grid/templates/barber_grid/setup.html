@@ -14,8 +14,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-body text-body">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark m-4 sticky-top">
-  <img src="{% static 'images/logo_tema_escuro.png' %}">
+
+<!--2 caminhos de logotipos que o JavaScript pode escolher-->
+
+ <div class="imagens_invisiveis">
+   <img id="imagem_logotipo_escuro" src="{% static 'images/logo_tema_escuro.png' %}">
+   <img id="imagem_logotipo_claro" src="{% static 'images/logo_tema_claro.png' %}">
+ </div>
+
+
+
+  <!--navbar próprio do bootstrap e material design bootstrap-->
+  <nav class="navbar navbar-expand-lg navbar bg m-4 sticky-top">
+  <img id="imagem_logotipo" src="{% static 'images/logo_tema_escuro.png' %}">
      <a class="navbar-brand" href="#">Barber Grid</a>
   <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,10 +62,10 @@
        <section class="py-5 text-center container">
       <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
-          <h1 class="fw-light">Seu próximo corte começa aqui</h1>
+          <h1 class="fw-light m-lg-4">Seu próximo corte começa aqui</h1>
           <p class="lead text-muted">Agende seu horário de forma rápida e simples</p>
           <p>
-            <a href="{% url 'servicos'%}" class="btn btn-primary my-2">Agendar agora!</a>
+            <a href="{% url 'pagina_agendamento'%}" class="btn btn-primary my-2">Agendar agora!</a>
             <a href="#" class="btn btn-secondary my-2">Contato</a>
           </p>
         </div>
@@ -200,12 +211,21 @@
 </body>
 <script>  const temaEscuro = window.matchMedia('(prefers-color-scheme: dark)');
 
+        let imagem = document.getElementById('imagem_logotipo')
+        let logotipo_claro = document.getElementById("imagem_logotipo_claro")
+        let logotipo_escuro = document.getElementById('imagem_logotipo_escuro')
         function aplicarTema(escuro) {
             document.documentElement.setAttribute(
                 "data-bs-theme",
-                escuro ? "dark" : "light"
+                escuro ? "dark": "light",
             );
         }
+
+        function alterarLogotipo(escuro){
+          imagem.src = escuro ? logotipo_escuro.src : logotipo_claro.src
+        }
+
+        alterarLogotipo(temaEscuro.matches)
 
         aplicarTema(temaEscuro.matches);
 
@@ -253,6 +273,8 @@
 
         document.getElementById("data_exibicao").textContent = `${dia_Semana}, ${dia} de ${mes}`
 
+
+        
 
 </script>
 </html>

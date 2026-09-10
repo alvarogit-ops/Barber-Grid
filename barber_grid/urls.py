@@ -5,6 +5,7 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', views.setup, name="setup"),
+    path('pagina_agendamento', views.pagina_agendamento, name="pagina_agendamento"),
     path('login/', views.login, name='login'), #aponta para uma função que existe em views. 
     path('registro', views.registro, name='registro'),
     path('painel_admin', views.painel_admin, name="painel_admin"),

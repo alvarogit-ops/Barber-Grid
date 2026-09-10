@@ -13,6 +13,9 @@ from .models import Agendamento, Cliente, Servico
 def setup(request):
     return render(request, 'barber_grid/setup.html')
 
+def pagina_agendamento(request):
+    return render(request, 'barber_grid/pagina_agendamento.html')
+
 def login(request):
     # Verifico se um usuário existe e se a senha está correta
 
